@@ -1,5 +1,8 @@
-# bTitle
-"bDescription"
+# XCCDF Checklist Template
+This project demonstrates:
+* Documenting security rules in the *controls/* directory.
+* Bundling the rules in a checklist, described by *attributes.yml*.
+* Encoding the checklist in XCCDF format using a GitHub Actions workflow.
 
 Field | Description | Example
 ----- | ----------- | -------
