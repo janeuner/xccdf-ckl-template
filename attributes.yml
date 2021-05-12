@@ -1,0 +1,94 @@
+---
+
+# Descriptions for many fields in this file come from the XCCDF schema.
+# Ref: https://csrc.nist.gov/schema/xccdf/1.2/xccdf_1.2.xsd
+
+# Field: benchmark.title
+# Description: The title displayed for the checklist.
+# STIG Viewer: Human-readable visible ASCII characters.
+benchmark.title: 'ZZZ Template Security Technical Implementation Guide'
+
+# Field: benchmark.version
+# Description: The version displayed for the checklist.
+# STIG Viewer: Appears to be a parsed uint; use natural numbers only.
+benchmark.version: '1'
+
+# Field: benchmark.plaintext
+# Description: Definitions for reusable text blocks, each with a unique identifier.
+# STIG Viewer: The release-info plaintext is appended to the benchmark.version.
+benchmark.plaintext: 'Release: 1, Benchmark Date: 01 Jan 1970'
+
+# Field: benchmark.plaintext.id
+# Description: Unique identifier for reusable text blocks.
+# STIG Viewer: release-info is the only known valid value.
+benchmark.plaintext.id: release-info
+
+# Field: benchmark.id
+# Description: Unique <xccdf:Benchmark> identifier.
+# STIG Viewer: Ignored.  Include for compatibility with XCCDF specification
+benchmark.id: zzz_template_stig
+
+# Field: benchmark.description
+# Description: Provide a description (typically a release note) of this benchmark.
+# STIG Viewer: Unknown
+benchmark.description: 'Submit comments or PRs to the publisher. This STIG is published as a tool to improve the security of information systems. The requirements are derived from the NIST 800-53 and related documents.'
+
+# Field: benchmark.status
+# Description: The acceptance status of an element. If an element does not have its own <xccdf:status> element, its status is that of its parent element.  
+# STIG Viewer: Unknown
+benchmark.status: accepted
+
+# Field: benchmark.status.date
+# Description: Optional date attribute for the status element, which signifies the date of the status change.
+# STIG Viewer: Unknown
+benchmark.status.date: '1970-01-01'
+
+# Field: benchmark.notice.id
+# Description: Legal notices (licensing information, terms of use, etc.), copyright statements, warnings, and other advisory notices about this <xccdf:Benchmark> and its use.
+# STIG Viewer: Unknown
+benchmark.notice.id: terms-of-use
+
+# Field: reference.href
+# Description: Supporting benchmark references - internet presence for the publisher of this <xccdf:Benchmark>.
+# STIG Viewer: Unknown
+reference.href: https://github.com/janeuner/milmove-linters-ckl
+
+# Field: reference.dc.publisher
+# Description: Supporting benchmark references - publisher of this <xccdf:Benchmark>.
+# STIG Viewer: Unknown
+reference.dc.publisher: ACME Example, Inc.
+
+# Field: reference.dc.source
+# Description: Supporting benchmark references - domain for the publisher of this <xccdf:Benchmark>.
+# STIG Viewer: Unknown
+reference.dc.source: example.com
+
+# Field: reference.dc.title
+# Description: Supporting rule references - default originator of rules in this <xccdf:Benchmark>.
+# STIG Viewer: Unknown
+reference.dc.title: https://github.com/janeuner
+
+# Field: reference.dc.subject
+# Description: Supporting rule references - default subject for rules in this <xccdf:Benchmark>.
+# STIG Viewer: Unknown
+reference.dc.subject: Benchmark template for STIG Checklists
+
+# Field: reference.dc.type
+# Description: Supporting rule references - default type for rules in this <xccdf:Benchmark>.
+# STIG Viewer: Unknown
+reference.dc.type: STIG
+
+# Field: reference.dc.identifier
+# Description: Supporting rule references - default identifier for rules in this <xccdf:Benchmark>.
+# STIG Viewer: Unknown
+reference.dc.identifier: ACME
+
+# Field: content_ref.name
+# Description: Unknown use case; associated with content_ref.href; .
+# STIG Viewer: Value is always "M"
+content_ref.name: M
+
+# Field: content_ref.href
+# Description: Points to code for a detached check in another location that uses the language or system specified by the <xccdf:check> element’s @system attribute. If multiple <xccdf:check-content-ref> elements appear, they represent alternative locations from which a benchmark consumer may obtain the check content. Benchmark consumers should process the alternatives in the order in which they appear in the XML. The first <xccdf:check-content-ref> from which content can be successfully retrieved should be used.
+# STIG Viewer: Seems to follow the format,"{PRODUCT}_[{MAJORVERSION}.{MINORVERSION}_]STIG.xml"
+content_ref.href: Template_1.x_STIG.xml 

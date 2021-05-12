@@ -1,0 +1,48 @@
+name: Build Checklist
+on: [push]
+
+jobs:
+  build_tools:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Install bundler, git-lite-version-bump, chef inspec
+      run: sudo gem install bundler git-lite-version-bump inspec-bin
+    - name: Check out mitre-inspec_tools
+      uses: actions/checkout@v2
+      with:
+        repository: 'janeuner/mitre-inspec_tools'
+        ref: 'jn-to-xccdf-check-fix-text'
+        lfs: 'true'
+    - name: Build & Install inspec_tools
+      run: |
+        bundle install
+        bundle exec rake generate_mapping_objects
+        bundle-audit check --update
+        gem build inspec_tools.gemspec
+        sudo gem install inspec_tools-*.gem
+    - name: Check out checklist code
+      uses: actions/checkout@v2
+    - name: List Working Directory
+      run: |
+        pwd
+        ls -la
+    - name: Compile Checklist
+      run: make
+      env:
+        CHEF_LICENSE: accept-silent
+    - name: Upload Build Artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: checklist
+        path: |
+          output.json
+          output.xml
+    - name: Publish Release
+      uses: "marvinpinto/action-automatic-releases@latest"
+      if: github.ref == 'refs/heads/main'
+      with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          prerelease: false
+          automatic_release_tag: "latest"
+          files: output.xml
+

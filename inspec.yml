@@ -1,0 +1,8 @@
+name: example_id
+title: bTitle
+maintainer: The Authors
+copyright: The Authors
+copyright_email: you@example.com
+license: Apache-2.0
+summary: "bDescription"
+version: 0.1.0
