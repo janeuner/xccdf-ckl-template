@@ -4,6 +4,8 @@ This project demonstrates:
 * Bundling the rules in a checklist, described by *attributes.yml*.
 * Encoding the checklist in XCCDF format using a GitHub Actions workflow.
 
+![20210512-xccdf-ckl-stigviewer](https://user-images.githubusercontent.com/7094088/118014283-a4c6a180-b318-11eb-8c81-9a5319986c81.png)
+
 Field | Description | Example
 ----- | ----------- | -------
 control | A **vulnerability identifier** string that uniquely identifies the rule. | V-nnnnnn for DISA rules, or X-nnnnnn for experimental rules.
