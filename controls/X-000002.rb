@@ -54,6 +54,6 @@ control 'X-000002' do
   tag rid: 'gosec-g101_rule'
   tag stig_id: 'stig_id_unused'
   tag fix_id: 'fix_id_unused'
-  tag cci: ['CCI-000183']
+  tag cci: [ 'CCI-000183' ]
   tag nist: ['IA-5 h']
 end
